@@ -10,12 +10,15 @@ namespace ProductsAPP
     {
         public override decimal valueToPay()
         {
-            return Price;
+            return Price*(decimal)Tax;
         }
 
         public override string ToString()
         {
-            return $"Price value: {valueToPay}";
+            return $"{base.ToString()}" +
+                $"\n\tPrice: {Price}" +
+                $"\n\tTax: {Tax:P2}" +
+                $"\n\tValue: {valueToPay()}";
         }
     }
 }

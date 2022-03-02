@@ -11,12 +11,12 @@ namespace ProductsAPP
         public string Description { get; set; }
         public int Id { get; set; }
         public decimal Price { get; set; }
-        public decimal Tax { get; set; }
+        public float Tax { get; set; }
 
         public abstract decimal valueToPay();
         public override string ToString()
         {
-            return $"{Description}";
+            return $"{Id}\t{Description}";
         }
 
     }

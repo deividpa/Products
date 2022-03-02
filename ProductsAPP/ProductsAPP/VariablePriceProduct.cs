@@ -8,12 +8,21 @@ namespace ProductsAPP
 {
     public class VariablePriceProduct : Product
     {
-        public float Meassurement { get; set; }
-        public int Quantity { get; set; }
+        public string Meassurement { get; set; }
+        public float Quantity { get; set; }
 
         public override decimal valueToPay()
         {
-            return 52;
+            return ((decimal)Quantity*Price)+ ((decimal)Quantity * Price)*(decimal)Tax;
+        }
+        public override string ToString()
+        {
+            return $"{base.ToString()}" +
+                $"\n\tMeassurement: {Meassurement}" +
+                $"\n\tQuantity: {Quantity}" +
+                $"\n\tPrice: {Price}" +
+                $"\n\tTax: {Tax:P2}" +
+                $"\n\tValue: {valueToPay()}";
         }
     }
 }
