@@ -22,7 +22,7 @@ namespace ProductsAPP
                 $"\n\tQuantity: {Quantity:N2}" +
                 $"\n\tPrice: {Price:C2}" +
                 $"\n\tTax: {Tax:P2}" +
-                $"\n\tValue: {valueToPay()}";
+                $"\n\tValue: {valueToPay():C2}";
         }
     }
 }

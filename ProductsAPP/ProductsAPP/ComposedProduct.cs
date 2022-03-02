@@ -12,22 +12,34 @@ namespace ProductsAPP
         public float Discount { get; set; }
         public ICollection Products { get; set; }
 
-        private string _accumulator;
+        public string Accumulator { get; set; }
 
+        public decimal parcialValue { get; set; }
         public override decimal valueToPay()
         {
-            return Price;
+            foreach (Product nProduct in Products)
+            {
+                float totDiscount = 0;
+                decimal indPrice;
+                indPrice = nProduct.valueToPay();
+
+                totDiscount = (float)indPrice*Discount;
+
+                parcialValue += indPrice - (decimal)totDiscount;
+            };
+            return parcialValue;    
         }
         public override string ToString()
         {
             foreach (Product productItem in Products)
             {
-                _accumulator += productItem.Description + ","; 
+                Accumulator += productItem.Description + ","; 
             }
 
             return $"{base.ToString()}" +
-                $"\n\tDiscount...: {Discount}" +
-                $"\n\tProducts...: {_accumulator}";
+                $"\n\tProducts...: {Accumulator}" +
+                $"\n\tDiscount...: {Discount:P2}" +
+                $"\n\tValue......: {valueToPay():C2}";
         }
 
 

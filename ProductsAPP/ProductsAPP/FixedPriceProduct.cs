@@ -10,7 +10,7 @@ namespace ProductsAPP
     {
         public override decimal valueToPay()
         {
-            return Price*(decimal)Tax;
+            return Price+(Price*(decimal)Tax);
         }
 
         public override string ToString()
