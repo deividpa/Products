@@ -16,9 +16,9 @@ namespace ProductsAPP
         public override string ToString()
         {
             return $"{base.ToString()}" +
-                $"\n\tPrice: {Price:C2}" +
-                $"\n\tTax: {Tax:P2}" +
-                $"\n\tValue: {valueToPay():C2}";
+                $"\n\tPrice.......: {$"{Price:C2}",15}" +
+                $"\n\tTax.........: {$"{Tax:P2}",15}" +
+                $"\n\tValue.......: {$"{valueToPay():C2}",15}";
         }
     }
 }

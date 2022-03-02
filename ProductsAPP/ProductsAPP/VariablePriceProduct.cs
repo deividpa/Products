@@ -19,10 +19,10 @@ namespace ProductsAPP
         {
             return $"{base.ToString()}" +
                 $"\n\tMeassurement: {Measurement:N2}" +
-                $"\n\tQuantity: {Quantity:N2}" +
-                $"\n\tPrice: {Price:C2}" +
-                $"\n\tTax: {Tax:P2}" +
-                $"\n\tValue: {valueToPay():C2}";
+                $"\n\tQuantity....: {$"{Quantity:N2}",15}" +
+                $"\n\tPrice.......: {$"{Price:C2}",15}" +
+                $"\n\tTax.........: {$"{Tax:P2}",15}" +
+                $"\n\tValue.......: {$"{valueToPay():C2}",15}";
         }
     }
 }

@@ -8,6 +8,6 @@ namespace ProductsAPP
 {
     public interface IPay
     {
-        public decimal ValueToPay();
+        public decimal valueToPay();
     }
 }

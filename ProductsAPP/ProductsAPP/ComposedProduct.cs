@@ -37,9 +37,9 @@ namespace ProductsAPP
             }
 
             return $"{base.ToString()}" +
-                $"\n\tProducts...: {Accumulator}" +
-                $"\n\tDiscount...: {Discount:P2}" +
-                $"\n\tValue......: {valueToPay():C2}";
+                $"\n\tProducts....: {$"{Accumulator}",15}" +
+                $"\n\tDiscount....: {$"{Discount:P2}",15}" +
+                $"\n\tValue.......: {$"{valueToPay():C2}",15}";
         }
 
 
