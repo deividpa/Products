@@ -1,25 +1,10 @@
-﻿/*using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProductsAPP
-{
-    public class Invoice : IPay
-    {
-        private Product _products;
-        public ICollection ProductsInvoice { get; set; }
-        public addProduct()
-    }
-}*/
-
+﻿
 namespace ProductsAPP
 {
     public class Invoice : IPay
     {
         private List<Product> _productItems;
+
 
         public Invoice()
         {
@@ -46,11 +31,11 @@ namespace ProductsAPP
             {
                 productsInfo += product.ToString() + "\n";
             }
-            return $"RECEIPT \n" +
-                $"-------------------------------------------------- \n" +
-                $"{productsInfo}" +
-                $"                    ============= \n" +
-                $"TOTAL: {$"              {valueToPay():C2}",15}";
+            return $"RECEIPT" +
+                $"\n--------------------------------------------------" +
+                $"\n{productsInfo}" +
+                $"                        =============" +
+                $"\nTOTAL: {$"                  {valueToPay():C2}",15}";
         }
     }
 }

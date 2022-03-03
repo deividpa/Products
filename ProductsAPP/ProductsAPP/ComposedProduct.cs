@@ -15,22 +15,31 @@ namespace ProductsAPP
         public string Accumulator { get; set; }
 
         public decimal parcialValue { get; set; }
+
+
         public override decimal valueToPay()
         {
+            float totDiscount = 0;
+            parcialValue = 0;
+
             foreach (Product nProduct in Products)
             {
-                float totDiscount = 0;
+
                 decimal indPrice;
+
                 indPrice = nProduct.valueToPay();
 
-                totDiscount = (float)indPrice*Discount;
+                totDiscount = (float)indPrice * Discount;
 
                 parcialValue += indPrice - (decimal)totDiscount;
+
             };
             return parcialValue;    
         }
         public override string ToString()
         {
+            Accumulator = "";
+
             foreach (Product productItem in Products)
             {
                 Accumulator += productItem.Description + ","; 
